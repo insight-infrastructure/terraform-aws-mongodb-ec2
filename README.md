@@ -5,7 +5,12 @@
 
 ## Features
 
-This module...
+This module sets up an ec2 instance running mongodb with ansible.  Runs the popular `undergreen.mongodb` 
+ansible role to configure the machine. Further configuration settings can be provided in a `mongodb.json` 
+file. 
+
+Please refer to https://github.com/UnderGreen/ansible-role-mongodb for details on how to configure the 
+additional variables supplied by `mongodb.json`.
 
 ## Terraform Versions
 
@@ -13,10 +18,20 @@ For Terraform v0.12.0+
 
 ## Usage
 
-```
-module "this" {
-    source = "github.com/insight-infrastructure/terraform-aws-mongodb-ec2"
+See `examples` directory for a working example. 
 
+```
+module "defaults" {
+  source = "../.."
+
+  private_key_path = var.private_key_path
+  public_key_path  = var.public_key_path
+
+  vpc_id                 = module.default_vpc.vpc_id
+  subnet_ids             = module.default_vpc.subnet_ids
+  vpc_security_group_ids = [aws_security_group.this.id]
+
+  playbook_vars_file = "${path.cwd}/mongodb.yaml"
 }
 ```
 ## Examples

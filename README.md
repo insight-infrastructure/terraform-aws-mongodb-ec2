@@ -76,6 +76,7 @@ No issue is creating limit on this module.
 | instance\_id | The instance ID created |
 | key\_name | The key pair name created |
 | public\_ip | The public IP of the instance created |
+| ssh\_command | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

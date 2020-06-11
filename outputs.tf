@@ -13,3 +13,6 @@ output "key_name" {
   description = "The key pair name created"
 }
 
+output "ssh_command" {
+  value = "ssh -i ${var.private_key_path} ubuntu@${aws_eip.this.public_ip}"
+}

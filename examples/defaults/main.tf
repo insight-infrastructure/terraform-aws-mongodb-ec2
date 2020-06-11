@@ -50,7 +50,8 @@ module "defaults" {
   private_key_path = var.private_key_path
   public_key_path  = var.public_key_path
 
-  instance_type = "t3.xlarge"
+  instance_type    = "t3.xlarge"
+  root_volume_size = 100 # in gb
 
   vpc_id                 = module.default_vpc.vpc_id
   subnet_ids             = module.default_vpc.subnet_ids

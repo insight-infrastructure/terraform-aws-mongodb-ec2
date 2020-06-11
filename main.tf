@@ -52,6 +52,4 @@ module "ansible" {
   playbook_vars_file = var.playbook_vars_file
 
   requirements_file_path = "${path.module}/ansible/requirements.yml"
-
-  root_volume_size = 100 # in gb
 }

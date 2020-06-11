@@ -2,6 +2,10 @@ module "ami" {
   source = "github.com/insight-infrastructure/terraform-aws-ami.git?ref=v0.1.0"
 }
 
+module "default_vpc" {
+  source = "github.com/insight-infrastructure/terraform-aws-default-vpc.git?ref=v0.1.0"
+}
+
 resource "aws_eip" "this" {
   tags = var.tags
 }
@@ -48,4 +52,6 @@ module "ansible" {
   playbook_vars_file = var.playbook_vars_file
 
   requirements_file_path = "${path.module}/ansible/requirements.yml"
+
+  root_volume_size = 100 # in gb
 }

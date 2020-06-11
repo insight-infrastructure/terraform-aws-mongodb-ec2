@@ -1,6 +1,11 @@
 mongodb_security_authorization: "enabled"
 mongodb_users:
-  - name: "testUser"
-    password: "passw0rd"
+  - name: "insight-fellow"
+    password: "passw0rd-complex"
     roles: "readWrite"
     database: "app_development"
+
+mongodb_net_bindip: "0.0.0.0"
+mongodb_net_http_enabled: true
+
+# https://github.com/UnderGreen/ansible-role-mongodb

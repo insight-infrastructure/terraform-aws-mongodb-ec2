@@ -56,3 +56,7 @@ module "defaults" {
 
   playbook_vars_file = "${path.cwd}/mongodb.yaml"
 }
+
+output "public_ip" {
+  value = module.defaults.public_ip
+}

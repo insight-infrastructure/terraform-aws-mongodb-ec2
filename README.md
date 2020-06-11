@@ -32,6 +32,8 @@ module "defaults" {
   vpc_security_group_ids = [aws_security_group.this.id]
 
   playbook_vars_file = "${path.cwd}/mongodb.yaml"
+
+  root_volume_size = 100 # in gb 
 }
 ```
 ## Examples

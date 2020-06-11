@@ -50,6 +50,8 @@ module "defaults" {
   private_key_path = var.private_key_path
   public_key_path  = var.public_key_path
 
+  instance_type = "t3.xlarge"
+
   vpc_id                 = module.default_vpc.vpc_id
   subnet_ids             = module.default_vpc.subnet_ids
   vpc_security_group_ids = [aws_security_group.this.id]
